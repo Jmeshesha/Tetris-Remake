@@ -14,7 +14,7 @@ public abstract class BasicPiece {
     public BasicPiece()throws SlickException{
 
         structure = new Block[4];
-        for(int i = 0; i< 4; i++){
+        for(int i = 0; i< 4; i++ ){
             structure[i] = new Block(getCurrentColor());
         }
         calculateEndLocation();
