@@ -19,28 +19,22 @@ public class Block {
     private Image currentColor;
 
 
-    public Block(String color) throws SlickException{
+    public Block(String color, int x, int y) throws SlickException{
         Image currentColor = new Image(color);
         this.currentColor = currentColor;
-        x = 5;
-        y = 0;
+        this.x = x;
+        this.y = y;
         size = 50;
 
     }
-    public void rotate(double centerX, double centerY){
-        double angle = 90;
+    //uses rotation matrix
+    public void rotate(double centerX, double centerY, int angle){
         double xFromCenter = x - centerX;
         double yFromCenter = y - centerY;
-        double distanceFromCenter = Math.sqrt(Math.pow(xFromCenter, 2) + Math.pow(yFromCenter, 2) );
-        double UnitAngleOriginal = Math.asin(xFromCenter/distanceFromCenter);
-        if(x<0){
-            UnitAngleOriginal += Math.PI;
-        }
-        double UnitAngleNew = UnitAngleOriginal + Math.toRadians(angle);
-        double newX = centerX + distanceFromCenter * Math.sin(UnitAngleNew);
-        double newY = centerY + distanceFromCenter * Math.cos(UnitAngleNew);
-        x = (int)newX;
-        y = (int)newY;
+        double rad = Math.toRadians(angle);
+        x = (int)Math.round((centerX +(xFromCenter * Math.cos(rad) - yFromCenter * Math.sin(rad))));
+        y = (int)(centerY + (xFromCenter * Math.sin(rad) + yFromCenter * Math.cos(rad)));
+
     }
 
 
@@ -58,10 +52,10 @@ public class Block {
     public int getY() {
         return y;
     }
-    public void moveDown(int x){
-        this.y-=y;
+    public void moveDown(int y){
+        this.y+=y;
     }
-    public void moveSide(int y){
+    public void moveSide(int x){
         this.x +=x;
     }
 
@@ -76,6 +70,7 @@ public class Block {
         return size;
     }
     public void draw(float startX, float startY){
+        if(y >= 0)
         currentColor.draw(startX+size*x, startY + size*y, size,  size, currColor );
     }
 

@@ -2,8 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Slick2D.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Exceptions/ColorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Exceptions/ColorException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Physics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Physics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/BasicPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/BasicPiece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/I_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/I_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/J_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/J_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/L_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/L_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/S_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/S_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/T_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/T_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Z_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Z_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Sates/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Sates/MainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Sates/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Sates/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Physics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Physics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/BasicPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/BasicPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/I_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/I_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/J_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/J_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/L_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/L_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled1.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +58,8 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Slick2d Jars/slick.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Slick2D/lib/lwjgl_util.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -109,7 +133,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -9,6 +9,7 @@ import org.newdawn.slick.SlickException;
 import java.util.jar.JarEntry;
 
 public class Grid {
+    //TODO: FIX Grid Coordinate System
     Graphics g;
     Block[][] grid = new Block[21][9];
     float startX;
@@ -19,11 +20,9 @@ public class Grid {
         this.startX = startX;
         this.startY = startY;
     }
-    public void putBlockToGrid(Block b, int x, int y ){
+    public void putBlockToGrid(Block b){
 
-        grid[y][x] = b;
-        b.setX(x);
-        b.setY(y);
+        grid[b.getY()][b.getX()] = b;
 
     }
 
@@ -46,16 +45,26 @@ public class Grid {
 
     }
     public boolean isFilled(int x, int y){
+        if(y < 0 || x<0)
+            return false;
         return grid[y][x] != null;
     }
 
     public void drawGrid(){
+        //TODO: Draw lines fo r
+        for(int k = 0; k< grid.length; k++){
+
+        }
+        for(int l = 0; l<grid[0].length; l++){
+
+        }
         for (int i = 0; i< grid.length; i++){
             for(int j = 0; j<grid[i].length; j++){
                 Block current = grid[i][j];
                 if(current != null){
                     //g.drawImage(current.getCurrentColor(), getX1(current), getY1(current), getX2(current), getY2(current), 0, 0, 1000, 1000);
                     //current.getCurrentColor().draw(getX1(current), getY1(current), current.getSize(),  current.getSize());
+
                     /*g.drawLine(getX1(current), getY1(current), getX1(current), getY2(current));
                     g.drawLine(getX2(current), getY1(current), getX2(current), getY2(current));
                     g.drawLine(getX1(current), getY1(current), getX2(current), getY1(current));
