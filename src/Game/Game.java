@@ -98,7 +98,7 @@ public class Game extends BasicGameState {
     }
     public void randomizePiece() throws SlickException{
         Random rand = new Random();
-        int selection = rand.nextInt(3);
+        int selection = rand.nextInt(6);
         switch(selection){
             case 0:
                 piece = new L_Piece();
@@ -108,6 +108,15 @@ public class Game extends BasicGameState {
                 break;
             case 2:
                 piece = new I_Piece();
+                break;
+            case 3:
+                piece = new T_Piece();
+                break;
+            case 4:
+                piece = new S_Piece();
+                break;
+            case 5:
+                piece = new Z_Piece();
         }
     }
 }

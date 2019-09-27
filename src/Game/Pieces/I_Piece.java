@@ -20,13 +20,4 @@ public class I_Piece extends BasicPiece {
 
         return  "images/green.png";
     }
-    @Override
-    public void rotate(){
-
-        for(int i = 0; i< structure.length; i++){
-            structure[i].rotate(centerX, centerY, rotationAngle);
-        }
-        calculateEndLocation();
-        rotationAngle *= -1;
-    }
 }

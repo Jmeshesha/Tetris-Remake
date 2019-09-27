@@ -12,7 +12,6 @@ public abstract class BasicPiece {
     protected double centerY;
     private Block[] endLocation;
     protected int size;
-    protected int rotationAngle = 90;
     public BasicPiece(int size)throws SlickException{
 
         structure = new Block[size];
@@ -33,7 +32,7 @@ public abstract class BasicPiece {
     public void rotate(){
 
         for(int i = 0; i< structure.length; i++){
-            structure[i].rotate(centerX, centerY, rotationAngle);
+            structure[i].rotate(centerX, centerY);
         }
         calculateEndLocation();
     }

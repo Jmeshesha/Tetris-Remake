@@ -28,12 +28,11 @@ public class Block {
 
     }
     //uses rotation matrix
-    public void rotate(double centerX, double centerY, int angle){
+    public void rotate(double centerX, double centerY){
         double xFromCenter = x - centerX;
         double yFromCenter = y - centerY;
-        double rad = Math.toRadians(angle);
-        x = (int)Math.round((centerX +(xFromCenter * Math.cos(rad) - yFromCenter * Math.sin(rad))));
-        y = (int)(centerY + (xFromCenter * Math.sin(rad) + yFromCenter * Math.cos(rad)));
+        x = (int)(centerX  - yFromCenter);
+        y = (int)(centerY + xFromCenter);
 
     }
 
