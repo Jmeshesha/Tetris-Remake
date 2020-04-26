@@ -1,22 +1,29 @@
 package Game;
 
-import Game.Pieces.*;
-import org.lwjgl.Sys;
+import Main.Main;
+import Pieces.*;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
-public class Game extends BasicGameState {
+public class Game  extends BasicGameState  {
     public static final int ID = 1;
     private StateBasedGame game;
     private Grid grid;
     BasicPiece piece;
+    BasicPiece endLocation;
+    BasicPiece storedPiece;
     int timeSinceUpdate = 0;
-    int timeBetweenUpdate = 200;
+    int timeBetweenUpdate =  1000;
+    int timeSinceDown = 0;
+    Block[] pieceStructure;
+    boolean stopMoving = false;
+
     @Override
 
     public int getID() {
@@ -27,7 +34,11 @@ public class Game extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         grid = new Grid(500, 0);
-        randomizePiece();
+        try {
+            randomizePiece();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -36,6 +47,7 @@ public class Game extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 
         piece.draw(grid.startX, grid.startY);
+        endLocation.draw(grid.startX, grid.startY);
         grid.drawGrid();
         for(int k = 0; k <= 9; k++) {
             g.drawLine(grid.startX + k * 50, grid.startY, grid.startX + k * 50, grid.startY + 21 * 50);
@@ -43,26 +55,18 @@ public class Game extends BasicGameState {
         for(int j = 0; j<= 21; j++){
             g.drawLine(grid.startX, grid.startY+ j*50, grid.startX + 9*50, grid.startY+j*50);
         }
+        grid.drawScoreAndLvl(g);
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-
-        boolean stopMoving = false;
+        timeBetweenUpdate = (int) (250*(2.0/(grid.level)));
+        pieceStructure = piece.getStructure();
+        while(endLocation.moveDown(grid));
         timeSinceUpdate += delta;
         if(timeSinceUpdate >= timeBetweenUpdate){
-            for(int i = 0; i < piece.getStructure().length; i++){
-                if( piece.getStructure()[i].getY() >= 20 ||grid.isFilled(piece.getStructure()[i].getX(), piece.getStructure()[i].getY()+1)){
-                    stopMoving = true;
-                }
-            }
-            if(stopMoving){
-                for(int i = 0; i < piece.getStructure().length; i++ ){
-                    grid.putBlockToGrid(piece.getStructure()[i]);
-                }
-                randomizePiece();
-            }else{
-                piece.moveDown();
+            if(!piece.moveDown(grid)){
+                placePiece();
             }
             timeSinceUpdate = 0;
         }
@@ -71,52 +75,59 @@ public class Game extends BasicGameState {
 
     @Override
     public void keyPressed(int key, char c) {
-        boolean moveLeft = true;
-        boolean moveRight = true;
-        for(int i = 0; i < piece.getStructure().length; i++){
-            if(piece.getStructure()[i].getX() <= 0){
-                moveLeft = false;
-            }else if(piece.getStructure()[i].getX() >=8){
-                moveRight = false;
-
+        boolean resetTime = false;
+        try {
+            if (key == Input.KEY_S) {
+                resetTime = piece.moveDown(grid);
+            }else if (key == Input.KEY_D) {
+                piece.moveSideways(grid,1);
+                endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
+                endLocation.moveSideways(grid, 1);
+            }else if (key == Input.KEY_A) {
+                piece.moveSideways(grid, -1);
+                endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
+                endLocation.moveSideways(grid, -1);
+                while(endLocation.moveDown(grid));
+            }else if (key == Input.KEY_W) {
+                resetTime = piece.rotate(grid);
+                endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
+                endLocation.rotate(grid);
+            }else if(key == Input.KEY_SPACE){
+                piece.moveUp(grid, (int)(piece.getCenterY() - endLocation.getCenterY()));
+                timeSinceUpdate = timeBetweenUpdate;
             }
-        }
-        if(key == Input.KEY_S){
-            piece.moveDown();
-        }
-        if(key == Input.KEY_D && moveRight){
 
-            piece.moveSideways(1);
+        } catch (SlickException e) {
+            e.printStackTrace();
         }
-        if(key == Input.KEY_A && moveLeft){
-            piece.moveSideways(-1);
-        }
-        if(key == Input.KEY_W){
-            piece.rotate();
-        }
+
+
+        if(resetTime) timeSinceUpdate = 0;
         super.keyPressed(key, c);
     }
-    public void randomizePiece() throws SlickException{
+    public void randomizePiece() throws SlickException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
         Random rand = new Random();
-        int selection = rand.nextInt(6);
-        switch(selection){
-            case 0:
-                piece = new L_Piece();
-                break;
-            case 1:
-                piece = new J_Piece();
-                break;
-            case 2:
-                piece = new I_Piece();
-                break;
-            case 3:
-                piece = new T_Piece();
-                break;
-            case 4:
-                piece = new S_Piece();
-                break;
-            case 5:
-                piece = new Z_Piece();
+        int selection = rand.nextInt(7);
+        BasicPiece[] pieceType = {new L_Piece(false), new J_Piece(false), new I_Piece(false),
+                new T_Piece(false), new O_Piece(false), new S_Piece(false), new Z_Piece(false)};
+        BasicPiece[] endLocType = {new L_Piece(true), new J_Piece(true), new I_Piece(true),
+                new T_Piece(true), new O_Piece(true), new S_Piece(true), new Z_Piece(true)};
+        piece = pieceType[selection];
+        endLocation = endLocType[selection];
+    }
+    public void placePiece(){
+        for (Block block : pieceStructure) {
+            try {
+                grid.putBlockToGrid(block);
+            }catch(java.lang.ArrayIndexOutOfBoundsException e){
+                game.enterState(4);
+            }
+        }
+        grid.checkLines();
+        try {
+            randomizePiece();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

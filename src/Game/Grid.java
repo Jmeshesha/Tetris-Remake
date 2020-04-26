@@ -1,28 +1,31 @@
 package Game;
 
 
-import Game.Pieces.Block;
-import org.newdawn.slick.Color;
+import Pieces.BasicPiece;
+import Pieces.Block;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 
-import java.util.jar.JarEntry;
-
 public class Grid {
-    //TODO: FIX Grid Coordinate System
-    Graphics g;
-    Block[][] grid = new Block[21][9];
+    Block[][] grid = new Block[22][9];
+    BasicPiece endLocation;
+    BasicPiece prevPiece;
     float startX;
     float startY;
+    int level = 1;
+    int levelCounter = 0;
+    int score = 0;
     public Grid(float startX, float startY) throws SlickException {
 
-        this.g = g;
         this.startX = startX;
         this.startY = startY;
     }
     public void putBlockToGrid(Block b){
 
         grid[b.getY()][b.getX()] = b;
+
+    }
+    public void putPieceToGrid(BasicPiece piece) {
 
     }
 
@@ -32,62 +35,70 @@ public class Grid {
      *
      */
     public void removeLine(int lineNumber){
-        Block[] temp;
-        if(grid[lineNumber].length == 0){
-            return;
-        }
-        while(lineNumber <20 && grid[lineNumber].length != 0 ){
-            grid[lineNumber++] = grid[lineNumber];
-        }
-        if(lineNumber == 20){
-            grid[lineNumber] = new Block[9];
+        if(lineNumber != 0 ){
+            for(int i = 0; i<9; i++){
+                grid [lineNumber][i] = grid[lineNumber-1][i];
+                if(grid[lineNumber-1][i] != null)
+                    grid[lineNumber-1][i].moveDown(1);
+
+            }
+            removeLine(lineNumber-1);
         }
 
+    }
+
+    public void checkLines(){
+        for(int i = 0; i< 21; i++){
+            boolean lineFilled = true;
+            for(int j = 0; j < 9; j++){
+                if(!isFilled(j,i)){
+                    lineFilled = false;
+                }
+            }
+            if(lineFilled) {
+                removeLine(i);
+                score += level*10;
+                levelCounter++;
+                checkLevel();
+            }
+        }
+    }
+    public void checkLevel(){
+        if(levelCounter >= 50){
+            level++;
+            levelCounter = 0;
+        }
+    }
+    public void drawScoreAndLvl(Graphics g){
+        g.drawString("Score: " + score, 1000, 100);
+        g.drawString("Level: " + level, 350, 100);
     }
     public boolean isFilled(int x, int y){
         if(y < 0 || x<0)
             return false;
-        return grid[y][x] != null;
+        try {
+            return grid[y][x] != null;
+        }catch (ArrayIndexOutOfBoundsException e){
+            int range;
+            if(x <0){
+                range = 0;
+            }else{
+                range = 8;
+            }
+            return grid[y][range] != null;
+        }
     }
-
+    public boolean canMoveHere(int x, int y){
+        return x >= 0 && x <= 8 && y <= 20 && !isFilled(x, y);
+    }
     public void drawGrid(){
-        //TODO: Draw lines fo r
-        for(int k = 0; k< grid.length; k++){
-
-        }
-        for(int l = 0; l<grid[0].length; l++){
-
-        }
-        for (int i = 0; i< grid.length; i++){
-            for(int j = 0; j<grid[i].length; j++){
-                Block current = grid[i][j];
-                if(current != null){
-                    //g.drawImage(current.getCurrentColor(), getX1(current), getY1(current), getX2(current), getY2(current), 0, 0, 1000, 1000);
-                    //current.getCurrentColor().draw(getX1(current), getY1(current), current.getSize(),  current.getSize());
-
-                    /*g.drawLine(getX1(current), getY1(current), getX1(current), getY2(current));
-                    g.drawLine(getX2(current), getY1(current), getX2(current), getY2(current));
-                    g.drawLine(getX1(current), getY1(current), getX2(current), getY1(current));
-                    g.drawLine(getX1(current), getY2(current), getX2(current), getY2(current));*/
+        for (int i = 0; i< 21; i++){
+            for(int j = 0; j<9; j++){
+                if(grid[i][j]!= null){
+                    Block current = grid[i][j];
                     current.draw(startX, startY);
-
                 }
             }
         }
-    }
-    public int getX1(Block current){
-        return current.getSize()*current.getX();
-    }
-    public int getY1(Block current){
-        return current.getSize()*current.getY();
-    }
-    public int getX2(Block current){
-        return current.getSize()*current.getX() + current.getSize();
-    }
-    public int getY2(Block current){
-        return current.getSize()*current.getY() + current.getSize();
-    }
-    public void drawBoxAroundBlock(){
-
     }
 }

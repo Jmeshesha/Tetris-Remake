@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="">
+    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="Fix collision and new">
+      <change afterPath="$PROJECT_DIR$/images/EndLoc_Block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pieces/BasicPiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pieces/O_Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Sates/GameOver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/BasicPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/BasicPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/I_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/I_Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Physics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/BasicPiece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Block.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/I_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/J_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/L_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/S_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/T_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Pieces/Z_Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/BasicPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/BasicPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/I_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/I_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/S_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/S_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/T_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/T_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/Z_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Pieces/Z_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Physics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/BasicPiece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/I_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/I_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/J_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/J_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/L_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/L_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/S_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/S_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/T_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/T_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Pieces/Z_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/Z_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,17 +49,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <dirStrings>
-      <dir>C:\Users\ThatOneDude\IdeaProjects\untitled1</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QaFCOTu7rAPkK7jycfsCYocKAC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Slick2D/lib/lwjgl_util.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -125,5 +141,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TetrisClone$Main.ic" NAME="Main Coverage Results" MODIFIED="1569638699064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

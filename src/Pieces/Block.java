@@ -1,8 +1,6 @@
-package Game.Pieces;
+package Pieces;
 
-import Exceptions.ColorException;
 import org.newdawn.slick.Color;
-import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
@@ -13,6 +11,8 @@ public class Block {
     private int y;
     private int size;
     private Color currColor;
+    private String colorString;
+
 
 
 
@@ -20,6 +20,7 @@ public class Block {
 
 
     public Block(String color, int x, int y) throws SlickException{
+        colorString = color;
         Image currentColor = new Image(color);
         this.currentColor = currentColor;
         this.x = x;
@@ -27,6 +28,7 @@ public class Block {
         size = 50;
 
     }
+
     //uses rotation matrix
     public void rotate(double centerX, double centerY){
         double xFromCenter = x - centerX;
@@ -39,6 +41,9 @@ public class Block {
 
     public Image getCurrentColor() {
         return currentColor;
+    }
+    public String getColorReference(){
+        return currentColor.getResourceReference();
     }
 
     public void setCurrentColor(Image currentColor) {
@@ -69,8 +74,10 @@ public class Block {
         return size;
     }
     public void draw(float startX, float startY){
-        if(y >= 0)
-        currentColor.draw(startX+size*x, startY + size*y, size,  size, currColor );
+        if(y >= 0) {
+            currentColor.draw(startX + size * x, startY + size * y, size, size, currColor);
+
+        }
     }
 
 }
