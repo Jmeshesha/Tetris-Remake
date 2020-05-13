@@ -22,8 +22,7 @@ public class Main extends StateBasedGame  {
     public static void main(String[] args) throws SlickException {
         App = new AppGameContainer(new Main());
         App.setDisplayMode(WindowHeight, WindowWidth, isFullscreen);
-        //ScalableGame game = new ScalableGame(new Main(), WindowWidth, WindowHeight, true);
-        //game.init(App);
+        System.out.println(System.getProperty("sun.arch.data.model"));
         App.start();
     }
     public Main(){
