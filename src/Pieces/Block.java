@@ -9,7 +9,6 @@ import org.newdawn.slick.SlickException;
 public class Block {
     private int x;
     private int y;
-    private int size;
     private Color currColor;
     private String colorString;
 
@@ -25,7 +24,6 @@ public class Block {
         this.currentColor = currentColor;
         this.x = x;
         this.y = y;
-        size = 50;
 
     }
 
@@ -70,15 +68,13 @@ public class Block {
     public void setY(int y) {
         this.y = y;
     }
-    public int getSize(){
-        return size;
-    }
-    public void draw(float startX, float startY){
+    public void draw(float startX, float startY, float size){
         if(y >= 0) {
             currentColor.draw(startX + size * x, startY + size * y, size, size, currColor);
 
         }
     }
+
 
 }
 

@@ -9,7 +9,6 @@ import org.newdawn.slick.state.StateBasedGame;
 public class GameOver  extends BasicGameState {
     public static final int ID = 4;
     private StateBasedGame game;
-    int deltaAdder=0;
     @Override
     public int getID() {
         return ID;
@@ -22,8 +21,9 @@ public class GameOver  extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-
+        //TODO: Add Better game over screen
         g.drawString("Game Over", 1920/2, 1080/2);
+
     }
 
     @Override

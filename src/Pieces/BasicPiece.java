@@ -5,7 +5,7 @@ import org.newdawn.slick.SlickException;
 
 
 
-public abstract class BasicPiece  {
+public abstract class BasicPiece implements Cloneable{
     protected Block[] structure;
     protected double centerX;
     protected double centerY;
@@ -15,12 +15,34 @@ public abstract class BasicPiece  {
         structure = new Block[size];
 
     }
+    public Object clone() throws CloneNotSupportedException {
+        BasicPiece b = (BasicPiece)super.clone();
+        b.structure = new Block[structure.length];
+        return b;
+
+    }
+    public BasicPiece replace(BasicPiece p) throws Exception {
+
+        BasicPiece clone = this;
+        clone.init(false);
+        this.structure = p.structure;
+        this.centerX = p.centerX;
+        this.centerY = p.centerY;
+        return clone;
+
+
+    }
+
     public abstract String getCurrentColor(boolean isEndLoc) throws SlickException;
-    public void draw(float startX, float startY){
+    public abstract void init(boolean isEndLoc) throws SlickException;
+
+    public void draw(float startX, float startY, float size){
         for(int i = 0; i<structure.length; i++){
-            structure[i].draw(startX, startY);
+            structure[i].draw(startX, startY, size);
         }
     }
+
+
     public boolean moveUp(Grid grid, int x) throws SlickException {
         Block[] copy = new Block[structure.length];
         for(int i = 0; i< structure.length; i++){

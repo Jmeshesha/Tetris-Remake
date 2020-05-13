@@ -7,10 +7,11 @@ import Sates.MainMenu;
 import Sates.Options;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.ScalableGame;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Main extends StateBasedGame {
+public class Main extends StateBasedGame  {
 
     static String Title = "Tetris";
     public static int WindowHeight = 1920;
@@ -21,10 +22,9 @@ public class Main extends StateBasedGame {
     public static void main(String[] args) throws SlickException {
         App = new AppGameContainer(new Main());
         App.setDisplayMode(WindowHeight, WindowWidth, isFullscreen);
+        //ScalableGame game = new ScalableGame(new Main(), WindowWidth, WindowHeight, true);
+        //game.init(App);
         App.start();
-        System.out.println("test");
-
-
     }
     public Main(){
         super(Title);
