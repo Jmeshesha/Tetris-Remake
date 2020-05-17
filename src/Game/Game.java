@@ -57,8 +57,6 @@ public class Game  extends BasicGameState  {
         endLocation.draw(grid.startX, grid.startY, grid.blockSize);
         grid.draw(g);
 
-
-
         if(heldPiece != null) heldPiece.draw(10, 10, 20);
 
         grid.drawStats(g);
@@ -160,6 +158,7 @@ public class Game  extends BasicGameState  {
         endLocation.init(true);
         piece.init(false);
         canHold = true;
+
     }
     /**
      * Method to place the current piece

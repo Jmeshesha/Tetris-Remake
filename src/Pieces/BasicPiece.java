@@ -1,6 +1,7 @@
 package Pieces;
 
 import Game.Grid;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 
@@ -33,7 +34,12 @@ public abstract class BasicPiece implements Cloneable{
 
     }
 
-    public abstract String getCurrentColor(boolean isEndLoc) throws SlickException;
+    public String getCurrentColor(boolean isEndLoc) throws SlickException{
+        if(isEndLoc) {
+            return "images/EndLoc_Block.png";
+        }
+        return "images/green.png";
+    }
     public abstract void init(boolean isEndLoc) throws SlickException;
 
     public void draw(float startX, float startY, float size){
@@ -46,7 +52,7 @@ public abstract class BasicPiece implements Cloneable{
     public boolean moveUp(Grid grid, int x) throws SlickException {
         Block[] copy = new Block[structure.length];
         for(int i = 0; i< structure.length; i++){
-            copy[i] = new Block(structure[i].getColorReference(), structure[i].getX(), structure[i].getY());
+            copy[i] = new Block(structure[i].getCurrentColor(), structure[i].getX(), structure[i].getY());
             copy[i].moveDown(-x);
             if(!grid.canMoveHere(copy[i].getX(), copy[i].getY())){
                 return false;
@@ -62,7 +68,7 @@ public abstract class BasicPiece implements Cloneable{
             return false;
         Block[] copy = new Block[structure.length];
         for(int i = 0; i< structure.length; i++){
-            copy[i] = new Block(structure[i].getColorReference(), structure[i].getX(), structure[i].getY());
+            copy[i] = new Block(structure[i].getCurrentColor(), structure[i].getX(), structure[i].getY());
             copy[i].rotate(centerX, centerY);
             if(!grid.canMoveHere(copy[i].getX(), copy[i].getY())){
                 return false;
@@ -75,7 +81,7 @@ public abstract class BasicPiece implements Cloneable{
     public boolean moveSideways(Grid grid, int x) throws SlickException {
         Block[] copy = new Block[structure.length];
         for(int i = 0; i< structure.length; i++){
-            copy[i] = new Block(structure[i].getColorReference(), structure[i].getX(), structure[i].getY());
+            copy[i] = new Block(structure[i].getCurrentColor(), structure[i].getX(), structure[i].getY());
             copy[i].moveSide(x);
             if(!grid.canMoveHere(copy[i].getX(), copy[i].getY())){
                 return false;
@@ -90,7 +96,7 @@ public abstract class BasicPiece implements Cloneable{
     public boolean moveDown(Grid grid) throws SlickException {
         Block[] copy = new Block[structure.length];
         for(int i = 0; i< structure.length; i++){
-            copy[i] = new Block(structure[i].getColorReference(), structure[i].getX(), structure[i].getY());
+            copy[i] = new Block(structure[i].getCurrentColor(), structure[i].getX(), structure[i].getY());
             copy[i].moveDown(1);
             if(!grid.canMoveHere(copy[i].getX(), copy[i].getY())){
                 return false;
@@ -99,6 +105,16 @@ public abstract class BasicPiece implements Cloneable{
         structure = copy;
         centerY++;
         return  true;
+    }
+    public void setBlockImage(Image image){
+        for(Block b: structure){
+            b.setImage(image);
+        }
+    }
+    public void setBlockColor(int r, int g, int b){
+        for(Block block: structure){
+            block.getImage().setColor(0, r, g, b);
+        }
     }
     public Block[] getStructure(){
         return structure;

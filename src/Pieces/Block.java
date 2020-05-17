@@ -9,9 +9,8 @@ import org.newdawn.slick.SlickException;
 public class Block {
     private int x;
     private int y;
-    private Color currColor;
     private String colorString;
-
+    private Color currColor;
 
 
 
@@ -26,7 +25,13 @@ public class Block {
         this.y = y;
 
     }
+    public Block(Image color, int x, int y) throws SlickException{
 
+        currentColor = color;
+        this.x = x;
+        this.y = y;
+
+    }
     //uses rotation matrix
     public void rotate(double centerX, double centerY){
         double xFromCenter = x - centerX;
@@ -44,10 +49,12 @@ public class Block {
         return currentColor.getResourceReference();
     }
 
-    public void setCurrentColor(Image currentColor) {
+    public void setImage(Image currentColor) {
         this.currentColor = currentColor;
     }
-
+    public Image getImage(){
+        return currentColor;
+    }
     public int getX() {
         return x;
     }
