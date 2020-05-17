@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="Add">
-      <change afterPath="$PROJECT_DIR$/src/UI/TextUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/BasicPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/BasicPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/I_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/I_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/J_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/J_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/L_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/L_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/O_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/O_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/S_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/S_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/T_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/T_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/Z_Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/Z_Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/UI/BasicUIElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/UI/BasicUIElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/UI/Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/BasicPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/BasicPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/I_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/I_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/J_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/J_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/L_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/L_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/O_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/O_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/S_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/S_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/T_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/T_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Z_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/Z_Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/BasicUIElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/BasicUIElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Text.java" beforeDir="false" />
-    </list>
+    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,12 +132,44 @@
       <option name="project" value="LOCAL" />
       <updated>1587876691610</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added piece colors + started UI">
+      <created>1589737201723</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589737201723</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/jonat/IdeaProjects/TetrisClone/src/Sates" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -174,12 +179,18 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Fix collision and new instant place piece" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix collision and new instant place piece" />
+    <MESSAGE value="Added piece colors + started UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added piece colors + started UI" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TetrisClone$Main.ic" NAME="Main Coverage Results" MODIFIED="1569638699064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
