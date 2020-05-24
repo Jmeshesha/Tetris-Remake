@@ -16,7 +16,7 @@ public class Z_Piece extends BasicPiece {
     @Override
     public void init(boolean isEndLoc) throws SlickException {
         Image i = new Image(getCurrentColor(isEndLoc));
-        i.setImageColor(200, 50, 0);
+        i.setImageColor(1f, 0.0f, 0);
         structure[0] = new Block(i, 4, -1);
         structure[1] = new Block(i, 5, -1);
         structure[2] = new Block(i, 5, 0);

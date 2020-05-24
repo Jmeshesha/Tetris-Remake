@@ -36,9 +36,9 @@ public abstract class BasicPiece implements Cloneable{
 
     public String getCurrentColor(boolean isEndLoc) throws SlickException{
         if(isEndLoc) {
-            return "images/EndLoc_Block.png";
+            return "res/images/EndLoc_Block.png";
         }
-        return "images/green.png";
+        return "res/images/Block.png";
     }
     public abstract void init(boolean isEndLoc) throws SlickException;
 

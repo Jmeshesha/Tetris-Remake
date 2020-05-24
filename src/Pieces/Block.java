@@ -75,7 +75,7 @@ public class Block {
     public void setY(int y) {
         this.y = y;
     }
-    public void draw(float startX, float startY, float size){
+    public void draw(float startX, float startY, float size)  {
         if(y >= 0) {
             currentColor.draw(startX + size * x, startY + size * y, size, size, currColor);
 

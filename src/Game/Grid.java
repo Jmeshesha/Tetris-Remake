@@ -3,6 +3,7 @@ package Game;
 
 import Pieces.BasicPiece;
 import Pieces.Block;
+import UI.TextUI;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.ShapeFill;
@@ -20,6 +21,10 @@ public class Grid {
     float startX;
     float startY;
     float blockSize;
+
+    TextUI scoreTxt ;
+    TextUI levelTxt;
+    TextUI linesTxt;
     int level = 0;
     int levelCounter = 0;
     int score = 0;
@@ -34,6 +39,9 @@ public class Grid {
         this.startX = startX;
         this.startY = startY;
         this.blockSize = blockSize;
+        scoreTxt = new TextUI(1000, 100, 55, "Score: "+ score, "8-bit Arcade In", Color.white);
+        levelTxt = new TextUI(300, 100, 55, "Level: " + level, "8-bit Arcade In", Color.white );
+        linesTxt = new TextUI(105, 150, 55,"Lines Cleared: "  + lines, "8-bit Arcade In", Color.white);
 
 
     }
@@ -92,10 +100,17 @@ public class Grid {
             levelCounter = 0;
         }
     }
-    public void drawStats(Graphics g){
-        g.drawString("Score: " + score, 1000, 100);
+    public void drawStats(Graphics g) throws SlickException {
+        scoreTxt.setText("Score " + score);
+        levelTxt.setText("Level " + level);
+        linesTxt.setText("Lines Cleared " + lines);
+
+        scoreTxt.draw();
+        levelTxt.draw();
+        linesTxt.draw();
+        /*g.drawString("Score: " + score, 1000, 100);
         g.drawString("Level: " + level, 350, 100);
-        g.drawString("Lines Cleared: "  + lines, 277, 150);
+        g.drawString("Lines Cleared: "  + lines, 277, 150);*/
     }
     /**
      * Checks if a specific block in the grid array is filled

@@ -23,7 +23,7 @@ public class Game  extends BasicGameState  {
     int timeBetweenUpdate =  1000;
     Block[] pieceStructure;
     boolean canHold = true;
-
+    Image background;
 
     @Override
     public int getID() {
@@ -38,6 +38,7 @@ public class Game  extends BasicGameState  {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
         grid = new Grid(500, 10, 50);
+        background = new Image("res/images/background.jpg");
         try {
             randomizePiece();
         } catch (CloneNotSupportedException e) {
@@ -52,10 +53,12 @@ public class Game  extends BasicGameState  {
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+        background.draw(0, 0, 1920, 1080);
         grid.drawBackground(g);
         piece.draw(grid.startX, grid.startY, grid.blockSize);
         endLocation.draw(grid.startX, grid.startY, grid.blockSize);
         grid.draw(g);
+
 
         if(heldPiece != null) heldPiece.draw(10, 10, 20);
 
