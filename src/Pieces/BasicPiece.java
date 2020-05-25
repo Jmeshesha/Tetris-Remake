@@ -42,9 +42,9 @@ public abstract class BasicPiece implements Cloneable{
     }
     public abstract void init(boolean isEndLoc) throws SlickException;
 
-    public void draw(float startX, float startY, float size){
+    public void draw(float startX, float startY, float width, float height){
         for(int i = 0; i<structure.length; i++){
-            structure[i].draw(startX, startY, size);
+            structure[i].draw(startX, startY, width, height);
         }
     }
 

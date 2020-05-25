@@ -3,12 +3,14 @@ package Game;
 
 import Main.Main;
 import Pieces.*;
+import UI.PieceHolder;
 import org.newdawn.slick.*;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class Game  extends BasicGameState  {
@@ -17,13 +19,15 @@ public class Game  extends BasicGameState  {
     private Grid grid;
     BasicPiece piece;
     BasicPiece endLocation;
-    BasicPiece heldPiece;
-    BasicPiece nextPiece;
+    PieceHolder heldPiece;
+    PieceHolder nextPiece;
     int timeSinceUpdate = 0;
     int timeBetweenUpdate =  1000;
     Block[] pieceStructure;
     boolean canHold = true;
     Image background;
+    HashMap<Integer, Float> keysHeld;
+
 
     @Override
     public int getID() {
@@ -37,13 +41,16 @@ public class Game  extends BasicGameState  {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
-        grid = new Grid(500, 10, 50);
-        background = new Image("res/images/background.jpg");
+        grid = new Grid(Main.getScreenWidth()/2-(Main.getScreenWidth()*(50f/1920f))*5,  Main.getScreenHeight()* 10f/1080f, Main.getScreenWidth()*(50f/1920f), (Main.getScreenHeight() *50f)/1080f);
+        background = new Image("res/images/Background2.png");
+        heldPiece = new PieceHolder(grid.startX - (3.5f*grid.blockWidth)-5, grid.startY + grid.blockHeight,   0.7f* grid.blockWidth, 0.7f*grid.blockHeight, "Hold");
+        nextPiece = new PieceHolder(grid.startX+ grid.blockWidth*9+5, grid.startY + grid.blockHeight,    0.7f*grid.blockWidth, 0.7f*grid.blockHeight,  "Next");
         try {
             randomizePiece();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
+        keysHeld  = new HashMap<>();
     }
     /**
      * Render method is periodically called to render graphcics
@@ -55,14 +62,20 @@ public class Game  extends BasicGameState  {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         background.draw(0, 0, 1920, 1080);
         grid.drawBackground(g);
-        piece.draw(grid.startX, grid.startY, grid.blockSize);
-        endLocation.draw(grid.startX, grid.startY, grid.blockSize);
+        piece.draw(grid.startX, grid.startY, grid.blockWidth, grid.blockHeight);
+        endLocation.draw(grid.startX, grid.startY, grid.blockWidth, grid.blockHeight);
         grid.draw(g);
+        heldPiece.drawBackground(g);
+        nextPiece.drawBackground(g);
 
-
-        if(heldPiece != null) heldPiece.draw(10, 10, 20);
+        if(heldPiece.piece != null){
+            heldPiece.draw(g);
+        }
+        nextPiece.draw(g);
 
         grid.drawStats(g);
+
+
     }
     /**
      * Update method is periodically called
@@ -72,7 +85,7 @@ public class Game  extends BasicGameState  {
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-
+        keyHeld(delta);
         timeBetweenUpdate = (int) ((grid.tpl[grid.level]/60.0)*1000);
         pieceStructure = piece.getStructure();
         while(endLocation.moveDown(grid));
@@ -86,17 +99,55 @@ public class Game  extends BasicGameState  {
 
     }
 
+    public void keyHeld(int delta){
+        boolean resetTime = false;
+        keysHeld.replaceAll((key, time) -> Float.valueOf(time + delta));
+        try {
+            //Press S to move piece down
+            if (keysHeld.containsKey(Input.KEY_S) && keysHeld.get(Input.KEY_S) > 75 ) {
+
+                resetTime = piece.moveDown(grid);
+                keysHeld.replace(Input.KEY_S, 0f);
+
+            }else if (keysHeld.containsKey(Input.KEY_D) && keysHeld.get(Input.KEY_D) > 75) {
+
+                piece.moveSideways(grid,1);
+                endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
+                endLocation.moveSideways(grid, 1);
+                keysHeld.replace(Input.KEY_D, 0f);
+
+            }else if (keysHeld.containsKey(Input.KEY_A) && keysHeld.get(Input.KEY_A) > 75 ) {
+                piece.moveSideways(grid, -1);
+                endLocation.moveUp(grid, (int) (endLocation.getCenterY() - piece.getCenterY()));
+                endLocation.moveSideways(grid, -1);
+                keysHeld.replace(Input.KEY_A, 0f);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(resetTime)
+            timeSinceUpdate = 0;
+
+    }
+    @Override
+    public void keyReleased(int key, char c) {
+        keysHeld.remove(key);
+    }
     /**
      * Keyboard input detection method is periodically
      * @param key This is the specific keyboard key that is pressed in numerical form
      * @param c this is specific keyboard key that is pressed in char form
      */
+
     @Override
     public void keyPressed(int key, char c) {
+        keysHeld.put(key, -250f);
         boolean resetTime = false;
         try {
             //Press S to move piece down
             if (key == Input.KEY_S) {
+
                 resetTime = piece.moveDown(grid);
 
             }else if (key == Input.KEY_D) {
@@ -109,7 +160,6 @@ public class Game  extends BasicGameState  {
                 piece.moveSideways(grid, -1);
                 endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
                 endLocation.moveSideways(grid, -1);
-                while(endLocation.moveDown(grid));
             }else if (key == Input.KEY_W) {
                 resetTime = piece.rotate(grid);
                 endLocation.moveUp(grid, (int)(endLocation.getCenterY() - piece.getCenterY()));
@@ -118,27 +168,27 @@ public class Game  extends BasicGameState  {
                 piece.moveUp(grid, (int)(piece.getCenterY() - endLocation.getCenterY()));
                 timeSinceUpdate = timeBetweenUpdate;
             }else if(key == Input.KEY_E && canHold){
-                if(heldPiece == null){
-                    heldPiece = piece;
+                if(heldPiece.piece == null){
+                    heldPiece.piece = piece;
                     randomizePiece();
                 }else{
-                    BasicPiece copy = heldPiece;
-                    heldPiece = piece;
+                    BasicPiece copy = heldPiece.piece;
+                    heldPiece.piece = (BasicPiece)piece.clone();
                     piece = copy;
                     endLocation = (BasicPiece)piece.clone();
                     endLocation.init(true);
                     piece.init(false);
 
                 }
-                heldPiece.init(false);
-                heldPiece.moveDown(grid);
-                heldPiece.moveDown(grid);
+                heldPiece.piece.init(false);
+                heldPiece.piece.moveDown(grid);
+                heldPiece.piece.moveDown(grid);
+
+
                 canHold = false;
             }
 
-        } catch (SlickException | CloneNotSupportedException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         }
         if(resetTime)
@@ -151,16 +201,35 @@ public class Game  extends BasicGameState  {
      * @throws SlickException
      */
     public void randomizePiece() throws SlickException, CloneNotSupportedException {
-        Random rand = new Random();
-        int selection = rand.nextInt(7);
+        Random rand1 = new Random();
+        Random rand2 = new Random();
+        int selection1 = rand1.nextInt(7);
+        int selection2 = rand2.nextInt(7);
+        if(selection1 == selection2){
+            if(selection1 != 0){
+                selection1--;
+            }else{
+                selection1++;
+            }
+        }
         BasicPiece[] pieceType = {new L_Piece(), new J_Piece(), new I_Piece(),
                 new T_Piece(), new O_Piece(), new S_Piece(), new Z_Piece()};
-        piece = pieceType[selection];
+        if(nextPiece.piece != null){
+                piece = (BasicPiece)nextPiece.piece.clone();
+
+        }else{
+            piece = pieceType[selection1];
+        }
+        nextPiece.piece = pieceType[selection2];
+
         endLocation = (BasicPiece)piece.clone();
 
+        nextPiece.piece.init(false);
         endLocation.init(true);
         piece.init(false);
         canHold = true;
+        nextPiece.piece.moveDown(grid);
+        nextPiece.piece.moveDown(grid);
 
     }
     /**

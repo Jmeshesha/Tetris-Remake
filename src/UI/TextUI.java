@@ -14,13 +14,9 @@ public class TextUI  {
     UnicodeFont font;
     String text;
     Color color;
-    float x;
-    float y;
     float size;
     String fontName;
-    public TextUI(float x, float y, float size, String text, String fontName, Color color){
-        this.x = x;
-        this.y = y;
+    public TextUI(float size, String text, String fontName, Color color){
         this.size = size;
         this.text = text;
         this.color = color;
@@ -51,9 +47,11 @@ public class TextUI  {
         this.fontName = fontName;
         initFont();
     }
+    public float getSize(){
+        return size;
+    }
 
-
-    public void draw() {
+    public void draw(float x, float y) {
         font.drawString(x, y, text, color);
 
     }

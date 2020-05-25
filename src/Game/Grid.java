@@ -3,16 +3,14 @@ package Game;
 
 import Pieces.BasicPiece;
 import Pieces.Block;
+import UI.PieceHolder;
 import UI.TextUI;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.ShapeFill;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.fills.GradientFill;
-import org.newdawn.slick.geom.Line;
-import org.newdawn.slick.geom.Shape;
-import org.newdawn.slick.geom.Transform;
-import org.newdawn.slick.geom.Polygon;
+import org.newdawn.slick.geom.*;
 
 public class Grid {
     Block[][] grid = new Block[22][9];
@@ -20,28 +18,29 @@ public class Grid {
     BasicPiece prevPiece;
     float startX;
     float startY;
-    float blockSize;
+    float blockWidth;
+    float blockHeight;
 
-    TextUI scoreTxt ;
-    TextUI levelTxt;
-    TextUI linesTxt;
+    TextUI stats ;
+    PieceHolder statsHolder;
     int level = 0;
     int levelCounter = 0;
     int score = 0;
+    int top = 0;
     int lines = 0;
     //Score per line
     int[] spl = {0, 40, 100, 300, 1200};
     //Frames per line out of 60 frames
     public int[] tpl = {48, 43, 38, 33,  28, 23, 18, 13, 8, 6, 5, 4, 3, 2, 1};
 
-    public Grid(float startX, float startY, float blockSize) throws SlickException {
+    public Grid(float startX, float startY, float blockWidth, float blockHeight) throws SlickException {
 
         this.startX = startX;
         this.startY = startY;
-        this.blockSize = blockSize;
-        scoreTxt = new TextUI(1000, 100, 55, "Score: "+ score, "8-bit Arcade In", Color.white);
-        levelTxt = new TextUI(300, 100, 55, "Level: " + level, "8-bit Arcade In", Color.white );
-        linesTxt = new TextUI(105, 150, 55,"Lines Cleared: "  + lines, "8-bit Arcade In", Color.white);
+        this.blockWidth = blockWidth;
+        this.blockHeight = blockHeight;
+        stats = new TextUI( 25, "Current Score "+ score + "\nTop Score\n" + top + "\nLevel\n" + level + "\nLines Cleared\n" + lines, "AldoTheApache", Color.white);
+        statsHolder = new PieceHolder(startX+blockWidth*9+1, startY +blockHeight*8, stats.getSize()*10, stats.getSize()*8, blockWidth, blockHeight,  "Score");
 
 
     }
@@ -101,16 +100,12 @@ public class Grid {
         }
     }
     public void drawStats(Graphics g) throws SlickException {
-        scoreTxt.setText("Score " + score);
-        levelTxt.setText("Level " + level);
-        linesTxt.setText("Lines Cleared " + lines);
-
-        scoreTxt.draw();
-        levelTxt.draw();
-        linesTxt.draw();
-        /*g.drawString("Score: " + score, 1000, 100);
-        g.drawString("Level: " + level, 350, 100);
-        g.drawString("Lines Cleared: "  + lines, 277, 150);*/
+        if (score > top){
+            top = score;
+        }
+        stats.setText("Current Score\n"+ score + "\nTop Score\n" + top + "\nLevel\n" + level + "\nLines Cleared\n" + lines);
+        statsHolder.drawBackground(g);
+        stats.draw(statsHolder.getX() + blockWidth/2, statsHolder.getY() + blockHeight/4);
     }
     /**
      * Checks if a specific block in the grid array is filled
@@ -148,14 +143,12 @@ public class Grid {
      * Draws every non-null block in the grid array
      * */
     public void drawBackground(Graphics g){
-        Polygon rect = new Polygon();
-        rect.addPoint(startX, startY);
-        rect.addPoint(startX + 9*blockSize, startY);
-        rect.addPoint(startX + 9*blockSize, startY +21*blockSize);
-        rect.addPoint(startX, startY + 21*blockSize);
+        g.setLineWidth(3);
+        RoundedRectangle rect = new RoundedRectangle(startX-2, startY, 9*blockWidth+6, 21*blockHeight+3, 5);
         GradientFill fill = new GradientFill(0, 0, new Color(0, 0, 0), 1920, 1080, new Color(0, 0, 0), true);
         g.fill(rect, fill);
         g.draw(rect);
+        g.setLineWidth(1.5f);
     }
     public void draw(Graphics g){
 
@@ -164,17 +157,17 @@ public class Grid {
             for(int j = 0; j < 9; j++){
                 if(grid[i][j]!= null){
                     Block current = grid[i][j];
-                    current.draw(startX, startY, blockSize);
+                    current.draw(startX, startY, blockWidth, blockHeight);
                 }
             }
         }
-
-        for(int k = 0; k <= 9; k++) {
+        //g.drawRoundRect(startX, startY, 9*blockSize, 21*blockSize, (int)blockSize/2);
+        /*for(int k = 0; k <= 9; k++) {
             g.drawLine(startX + k * blockSize, startY, startX + k * blockSize, startY + 21 * blockSize);
         }
         for(int j = 0; j<= 21; j++){
             g.drawLine(startX, startY+ j*blockSize, startX + 9*blockSize, startY+j*blockSize);
-        }
+        }*/
 
     }
 
