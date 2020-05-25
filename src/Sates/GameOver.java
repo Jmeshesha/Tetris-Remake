@@ -1,14 +1,15 @@
 package Sates;
 
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.SlickException;
+import Main.Main;
+import UI.TextUI;
+import org.newdawn.slick.*;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 public class GameOver  extends BasicGameState {
     public static final int ID = 4;
     private StateBasedGame game;
+    TextUI gameOver;
     @Override
     public int getID() {
         return ID;
@@ -17,12 +18,16 @@ public class GameOver  extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
+        gameOver = new TextUI(50, "Game Over", "8-BIT WONDER", Color.white);
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        //TODO: Add Better game over screen
-        g.drawString("Game Over", 1920/2, 1080/2);
+        //TODO: Add Buttons
+        Image i = new Image("res/images/Background2.png");
+        i.setImageColor(0.25f, 0.25f, 0.25f);
+        i.draw(0, 0, Main.getScreenWidth(), Main.getScreenHeight());
+        gameOver.draw(850, Main.getScreenHeight()/4);
 
     }
 

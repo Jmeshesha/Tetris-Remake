@@ -2,6 +2,7 @@ package UI;
 
 import java.awt.Font;
 
+import Main.Main;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
@@ -17,7 +18,7 @@ public class TextUI  {
     float size;
     String fontName;
     public TextUI(float size, String text, String fontName, Color color){
-        this.size = size;
+        this.size = size * Main.getScreenWidth()/1920f;
         this.text = text;
         this.color = color;
         this.fontName = fontName;

@@ -21,17 +21,17 @@ public class PieceHolder {
     float y;
     float width;
     float height;
-    public PieceHolder(float x, float y, float blockWidth, float blockHeight, String text) throws SlickException {
+    public PieceHolder(float x, float y, float blockWidth, float blockHeight, String text)  {
         this.x = x;
         this.y = y;
         this.width = blockWidth*5;
         this.height = blockHeight*5;
         this.blockWidth = blockWidth;
         this.blockHeight = blockHeight;
-        this.text = new TextUI(Main.getScreenWidth() * 25/1920f , text, "8-Bit40", Color.white);
+        this.text = new TextUI(25 , text, "8-Bit40", Color.white);
 
     }
-    public PieceHolder(float x, float y, float width, float height, float blockWidth, float blockHeight, String text) throws SlickException {
+    public PieceHolder(float x, float y, float width, float height, float blockWidth, float blockHeight, String text)  {
         this.x = x;
         this.y = y;
         this.width = width;

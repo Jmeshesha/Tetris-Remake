@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/Fonts/AldotheApache.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/images/Background2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/images/Background3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/PieceHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Game/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/BasicPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/BasicPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Pieces/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Pieces/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled1/UI/BasicUIElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/Sates/GameOver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/Sates/GameOver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled1/UI/PieceHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/UI/PieceHolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled1/UI/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled1/UI/TextUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/BasicPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/BasicPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/BasicUIElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sates/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sates/GameOver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/PieceHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PieceHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/TextUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

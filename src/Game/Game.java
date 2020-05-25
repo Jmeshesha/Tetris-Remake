@@ -26,8 +26,13 @@ public class Game  extends BasicGameState  {
     Block[] pieceStructure;
     boolean canHold = true;
     Image background;
+    int gameOverTimer;
+    boolean isGameOver = false;
     HashMap<Integer, Float> keysHeld;
+    float alphaChange = 0;
+    float valueChange = 1;
 
+    Image foreground;
 
     @Override
     public int getID() {
@@ -43,6 +48,8 @@ public class Game  extends BasicGameState  {
         this.game = game;
         grid = new Grid(Main.getScreenWidth()/2-(Main.getScreenWidth()*(50f/1920f))*5,  Main.getScreenHeight()* 10f/1080f, Main.getScreenWidth()*(50f/1920f), (Main.getScreenHeight() *50f)/1080f);
         background = new Image("res/images/Background2.png");
+        foreground = new Image(background.getResourceReference());
+        foreground.setImageColor(1, 1, 1, 0);
         heldPiece = new PieceHolder(grid.startX - (3.5f*grid.blockWidth)-5, grid.startY + grid.blockHeight,   0.7f* grid.blockWidth, 0.7f*grid.blockHeight, "Hold");
         nextPiece = new PieceHolder(grid.startX+ grid.blockWidth*9+5, grid.startY + grid.blockHeight,    0.7f*grid.blockWidth, 0.7f*grid.blockHeight,  "Next");
         try {
@@ -61,6 +68,7 @@ public class Game  extends BasicGameState  {
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         background.draw(0, 0, 1920, 1080);
+
         grid.drawBackground(g);
         piece.draw(grid.startX, grid.startY, grid.blockWidth, grid.blockHeight);
         endLocation.draw(grid.startX, grid.startY, grid.blockWidth, grid.blockHeight);
@@ -75,6 +83,7 @@ public class Game  extends BasicGameState  {
 
         grid.drawStats(g);
 
+        foreground.draw(0, 0, Main.getScreenWidth(), Main.getScreenHeight());
 
     }
     /**
@@ -85,18 +94,23 @@ public class Game  extends BasicGameState  {
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        keyHeld(delta);
-        timeBetweenUpdate = (int) ((grid.tpl[grid.level]/60.0)*1000);
-        pieceStructure = piece.getStructure();
-        while(endLocation.moveDown(grid));
-        timeSinceUpdate += delta;
-        if(timeSinceUpdate >= timeBetweenUpdate){
-            if(!piece.moveDown(grid)){
-                placePiece();
-            }
-            timeSinceUpdate = 0;
-        }
+        if(isGameOver){
+            gameOverTimer += delta;
+            goToGameOver();
+        }else {
+            keyHeld(delta);
 
+            timeBetweenUpdate = (int) ((grid.tpl[grid.level] / 60.0) * 1000);
+            pieceStructure = piece.getStructure();
+            while (endLocation.moveDown(grid)) ;
+            timeSinceUpdate += delta;
+            if (timeSinceUpdate >= timeBetweenUpdate) {
+                if (!piece.moveDown(grid)) {
+                    placePiece();
+                }
+                timeSinceUpdate = 0;
+            }
+        }
     }
 
     public void keyHeld(int delta){
@@ -241,7 +255,7 @@ public class Game  extends BasicGameState  {
             try {
                 grid.putBlockToGrid(block);
             }catch(java.lang.ArrayIndexOutOfBoundsException e){
-                game.enterState(4);
+                isGameOver = true;
             }
         }
         //check if there are any line clears
@@ -254,4 +268,15 @@ public class Game  extends BasicGameState  {
             e.printStackTrace();
         }
     }
+    public void goToGameOver(){
+        if(gameOverTimer > 10) {
+            foreground.setImageColor(valueChange, valueChange, valueChange, alphaChange);
+            valueChange -=0.0125f;
+            alphaChange += 0.02f;
+            gameOverTimer = 0;
+        }
+        if( valueChange <= 0.2f)
+            game.enterState(4);
+    }
+
 }
