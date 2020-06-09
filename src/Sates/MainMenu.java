@@ -30,10 +30,6 @@ public class MainMenu  extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        if(deltaAdder > 2000){
-            System.out.println(deltaAdder);
-            deltaAdder =0;
-        }
-        deltaAdder+=delta;
+
     }
 }

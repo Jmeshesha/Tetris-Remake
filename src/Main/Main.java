@@ -1,7 +1,7 @@
 package Main;
 
 
-import Game.Game;
+import Sates.Game;
 import Sates.GameOver;
 import Sates.MainMenu;
 import Sates.Options;
@@ -34,7 +34,7 @@ public class Main extends StateBasedGame  {
         addState(new Game());
         addState(new Options());
         addState(new GameOver());
-        enterState(1);
+        enterState(4);
     }
     public static float getScreenHeight(){
         return App.getScreenHeight();
