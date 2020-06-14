@@ -6,26 +6,25 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Options extends TetrisState {
-    public final int ID = 3;
-    private StateBasedGame game;
+public class PieceCreator extends TetrisState {
+    int id = 5;
     @Override
     public int getID() {
-        return ID;
+        return id;
     }
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        this.game = game;
-    }
-
-    @Override
-    public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+
+    }
+
+    @Override
+    public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 
     }
 }

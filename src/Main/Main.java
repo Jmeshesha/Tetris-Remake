@@ -1,10 +1,7 @@
 package Main;
 
 
-import Sates.Game;
-import Sates.GameOver;
-import Sates.MainMenu;
-import Sates.Options;
+import Sates.*;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
@@ -14,7 +11,7 @@ public class Main extends StateBasedGame  {
 
     static String Title = "Tetris";
     public static int WindowWidth = 1920;
-    public static int WindowHeight = 1080;
+    public static int WindowHeight = 800;
 
     static boolean isFullscreen = true;
     static AppGameContainer App;
@@ -34,7 +31,9 @@ public class Main extends StateBasedGame  {
         addState(new Game());
         addState(new Options());
         addState(new GameOver());
-        enterState(4);
+        addState(new PieceCreator());
+        addState(new PauseState());
+        enterState(2);
     }
     public static float getScreenHeight(){
         return App.getScreenHeight();

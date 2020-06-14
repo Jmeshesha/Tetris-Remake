@@ -10,7 +10,7 @@ import org.newdawn.slick.fills.GradientFill;
 import org.newdawn.slick.geom.*;
 
 public class Grid {
-    Block[][] grid = new Block[22][9];
+    Block[][] grid;
     BasicPiece endLocation;
     BasicPiece prevPiece;
     public float startX;
@@ -36,15 +36,25 @@ public class Grid {
         this.startY = startY;
         this.blockWidth = blockWidth;
         this.blockHeight = blockHeight;
-        stats = new TextUI( 25, "Current Score "+ score + "\nTop Score\n" + top + "\nLevel\n" + level + "\nLines Cleared\n" + lines, "AldoTheApache", Color.white);
-        statsHolder = new PieceHolder(startX+blockWidth*9+1, startY +blockHeight*8, stats.getSize()*10, stats.getSize()*8, blockWidth, blockHeight,  "Score");
 
+        grid = new Block[22][9];
 
+    }
+    public Grid(float startX, float startY, float blockWidth, float blockHeight, int width, int height){
+        this.startX = startX;
+        this.startY = startY;
+        this.blockWidth = blockWidth;
+        this.blockHeight = blockHeight;
+        grid = new Block[22][9];
     }
     public void putBlockToGrid(Block b){
 
         grid[b.getY()][b.getX()] = b;
 
+    }
+    public void initStats(){
+        stats = new TextUI( 22.5f, "Current Score "+ score + "\nTop Score\n" + top + "\nLevel\n" + level + "\nLines Cleared\n" + lines, "Square", Color.white);
+        statsHolder = new PieceHolder(startX+blockWidth*9+1, startY +blockHeight*8, stats.getSize()*10, stats.getSize()*11, blockWidth, blockHeight,  "Score");
     }
     public void setTop(int newTop){
         if(newTop > top)

@@ -22,15 +22,17 @@ public class Button {
     BasicAction hoveredAction;
     BasicAction clickedAction;
     int hoveredDiff = 0;
+    int maxHoveredDiff;
     int outlineLength = 1;
     TextUI copy;
 
     boolean isHovered = false;
-    public Button(int x, int y, int width, int height){
+    public Button(int x, int y, int width, int height, int maxHoveredDiff){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        this.maxHoveredDiff = maxHoveredDiff;
 
     }
     public void setHoveredAction(BasicAction action){
@@ -62,7 +64,7 @@ public class Button {
             g.setLineWidth(1.5f);
             g.setColor(new Color(1f, 1f, 1f));
             TextUI copy = new TextUI(text.size, text.text, text.fontName, Color.black);
-            copy.draw(x + width/2-0.2f*text.size*text.getText().length(), y + height/2- 0.25f*text.getSize() );
+            copy.draw(x + width/2-0.3f*text.size*text.getText().length(), y + height/2- 0.25f*text.getSize() );
 
 
         }else{
@@ -73,7 +75,7 @@ public class Button {
     }
     public void drawHovered(){
 
-        copy.draw(x + width/2-0.2f*text.size*text.getText().length(), y + height/2- 0.25f*text.getSize());
+        copy.draw(x + width/2-0.3f*text.size*text.getText().length(), y + height/2- 0.25f*text.getSize());
 
     }
 
@@ -119,7 +121,7 @@ public class Button {
                 hoveredAction.play();
                 System.out.println("Hovered :D");
             }
-            hoveredDiff = -7;
+            hoveredDiff = -maxHoveredDiff;
             text.setColor(Color.cyan);
             isHovered = true;
         }else{

@@ -60,6 +60,7 @@ public class FadeOutTransition implements Transition {
 		g.setColor(color);
 		g.fillRect(0, 0, container.getWidth() * 2, container.getHeight() * 2);
 		g.setColor(old);
+
 	}
 	
 	/**

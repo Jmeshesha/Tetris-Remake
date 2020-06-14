@@ -10,7 +10,7 @@ import org.newdawn.slick.util.ResourceLoader;
 import org.newdawn.slick.UnicodeFont;
 import org.newdawn.slick.font.effects.ColorEffect;
 
-public class TextUI  {
+public class TextUI {
 
     UnicodeFont font;
     String text;
@@ -19,16 +19,18 @@ public class TextUI  {
     String fontName;
     float x;
     float y;
-    public TextUI(float size, String text, String fontName, Color color){
-        this.size = size * Main.getScreenWidth()/1920f;
+
+    public TextUI(float size, String text, String fontName, Color color) {
+        this.size = size * Main.getScreenWidth() / 1920f;
         this.text = text;
         this.color = color;
         this.fontName = fontName;
         initFont();
     }
-    public void initFont(){
-        try{
-            Font UIFont1 = Font.createFont(Font.TRUETYPE_FONT, ResourceLoader.getResourceAsStream("res/fonts/" + fontName +".ttf"));
+
+    public void initFont() {
+        try {
+            Font UIFont1 = Font.createFont(Font.TRUETYPE_FONT, ResourceLoader.getResourceAsStream("res/fonts/" + fontName + ".ttf"));
             UIFont1 = UIFont1.deriveFont(Font.PLAIN, size); //You can change "PLAIN" to "BOLD" or "ITALIC"... and 16.f is the size of your font
 
             font = new UnicodeFont(UIFont1);
@@ -36,15 +38,21 @@ public class TextUI  {
             font.getEffects().add(new ColorEffect(java.awt.Color.white)); //You can change your color here, but you can also change it in the render{ ... }
             font.addAsciiGlyphs();
             font.loadGlyphs();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void setText(String text){
+
+    public void setText(String text) {
         this.text = text;
     }
-    public void setColor(Color color){
+
+    public void setColor(Color color) {
         this.color = color;
+    }
+
+    public Color getColor() {
+            return color;
     }
     public void setFont(String fontName) {
         this.fontName = fontName;

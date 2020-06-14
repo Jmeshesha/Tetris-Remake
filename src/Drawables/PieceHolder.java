@@ -25,7 +25,7 @@ public class PieceHolder {
         this.height = blockHeight*5;
         this.blockWidth = blockWidth;
         this.blockHeight = blockHeight;
-        this.text = new TextUI(25 , text, "8-Bit40", Color.white);
+        this.text = new TextUI(30f , text, "Square", Color.white);
 
     }
     public PieceHolder(float x, float y, float width, float height, float blockWidth, float blockHeight, String text)  {
@@ -35,7 +35,7 @@ public class PieceHolder {
         this.height = height;
         this.blockWidth = blockWidth;
         this.blockHeight = blockHeight;
-        this.text = new TextUI( Main.getScreenWidth() * 25/1920f, text, "8-Bit40", Color.white);
+        this.text = new TextUI( Main.getScreenWidth() * 30f/1920f, text, "Square", Color.white);
     }
     public float getX(){
         return x;
