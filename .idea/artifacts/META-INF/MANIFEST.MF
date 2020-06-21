@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Main-Class: com.meshesha.tetrisremake.Main.Main
+Class-Path: annotations-17.0.0.jar gson-2.8.6.jar jinput.jar lwjgl.jar s
+ lick.jar lwjgl_util.jar Pack200Task.jar kotlin-stdlib.jar kotlin-reflec
+ t.jar kotlin-test.jar kotlin-stdlib-jdk7.jar kotlin-stdlib-jdk8.jar
+

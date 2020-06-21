@@ -1,7 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Tetris-Remake" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="" />
+    <list default="true" id="9c9354a6-76ea-4fca-b74d-baca43ba94e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Tetris_Remake.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/jonat.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/OpenAL32.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/OpenAL64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Pack200Task.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jinput-dx8.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jinput-dx8_64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jinput-raw.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jinput-raw_64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libjinput-linux.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libjinput-linux64.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libjinput-osx.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/liblwjgl.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/liblwjgl.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/liblwjgl64.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libopenal.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libopenal64.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/lwjgl.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/lwjgl64.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/openal.dylib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Icon/tetrislogo_DZW_icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/Background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/Background_Blurred.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/images/Background_Blurred2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/8-BIT WONDER.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/8-Bit40.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/8-bit Arcade In.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/8-bit Arcade Out.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/Nau Sea.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Fonts/Squareo.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Cross.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Piece2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Pyramid.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/TestBigPiece.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Title.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Title10.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Title11.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Title2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Pieces/Title3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/Background2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/Background2_Blurred.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/Background2_Blurred2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/Background3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/MainMenuBg.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/clear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/images/th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Actions/BasicAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/actions/BasicAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/ImagePopUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/PieceHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/PieceHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/BasicPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/BasicPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/I_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/I_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/J_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/J_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/L_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/L_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/O_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/O_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/S_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/S_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/T_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/T_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Pieces/Z_Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Pieces/Z_Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/SettingsButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/Slider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/Slider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/TextBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Drawables/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/drawables/TextUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/FileIO/BlockJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/fileio/BlockJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/FileIO/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/fileio/JSONReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/GameOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/GameOver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/PauseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/PauseTransition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/PauseTransition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/PieceCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/PieceCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/PieceSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/PieceSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/Sates/TetrisState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/meshesha/tetrisremake/sates/TetrisState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris-Remake.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +128,23 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GSON" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Tetris_Remake" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone2\src" />
-      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone2\src\Drawables" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone\res" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Main" />
       <recent name="Actions" />
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone\res" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone2\src" />
+      <recent name="C:\Users\jonat\IdeaProjects\TetrisClone2\src\Drawables" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -83,7 +174,7 @@
     </configuration>
     <configuration name="AntiAliasTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.newdawn.slick.tests.AntiAliasTest" />
-      <module name="untitled1" />
+      <module name="Tetris-Remake" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.newdawn.slick.tests.*" />
@@ -95,8 +186,8 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.meshesha.tetrisremake.Main.Main" />
-      <module name="untitled1" />
+      <option name="MAIN_CLASS_NAME" value="com.meshesha.tetrisremake.main.Main" />
+      <module name="Tetris-Remake" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

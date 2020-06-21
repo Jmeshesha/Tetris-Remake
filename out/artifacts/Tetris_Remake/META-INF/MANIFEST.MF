@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: com.meshesha.tetrisremake.main.Main
+Class-Path: OpenAL64.dll jinput-raw.dll openal.dylib lwjgl.dll liblwjgl.
+ so libjinput-osx.dylib jinput-dx8.dll lwjgl64.dll liblwjgl.dylib jinput
+ -raw_64.dll liblwjgl64.so libjinput-linux64.so libopenal.so libjinput-l
+ inux.so jinput-dx8_64.dll OpenAL32.dll libopenal64.so build.xml
+
