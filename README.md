@@ -6,7 +6,7 @@
 <p>This is my implementation of the game Tetris using the Slick-2D and LWJGL libraries for graphics and the GSON library for saving and reading custom pieces.</p>
 
 <h2>Installation</h2>
-<p> You can download it from  <a href="http://www.mediafire.com/file/zwp9i3jyn6pz07d/Tetris_Remake.rar/file">this link</a> or by downloading the repo and running the executable jar file in out/artifacts/TetrisRemake</p>
+<p> You can play it by downloading it from  <a href="http://www.mediafire.com/file/zwp9i3jyn6pz07d/Tetris_Remake.rar/file">this link</a> or by downloading the repo and running the Tetris-Remake.jar file in out/artifacts/TetrisRemake</p>
 <h2>Controls</h2>
 <h3>Game</h3>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>S Key:</b> Moves piece down and makes sure that the piece timer for moving down is reset (Can be held down)</p>
